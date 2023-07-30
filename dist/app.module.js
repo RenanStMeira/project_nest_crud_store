@@ -10,16 +10,16 @@ exports.AppModule = void 0;
 const common_1 = require("@nestjs/common");
 const config_1 = require("@nestjs/config");
 const typeorm_1 = require("@nestjs/typeorm");
-const produto_module_1 = require("./produto/produto.module");
-const usuario_module_1 = require("./usuario/usuario.module");
+const productModule_1 = require("./Product/productModule");
+const userModule_1 = require("./User/userModule");
 const postgres_config_service_1 = require("./Config/postgres.config.service");
 let AppModule = class AppModule {
 };
 AppModule = __decorate([
     (0, common_1.Module)({
         imports: [
-            usuario_module_1.UsuarioModule,
-            produto_module_1.ProdutoModule,
+            userModule_1.UsuarioModule,
+            productModule_1.ProdutoModule,
             config_1.ConfigModule.forRoot({
                 isGlobal: true,
             }),
