@@ -20,9 +20,11 @@ const CriaUsuario_dto_1 = require("./dto/CriaUsuario.dto");
 const ListaUsuario_dto_1 = require("./dto/ListaUsuario.dto");
 const usuario_entity_1 = require("./usuario.entity");
 const usuario_repository_1 = require("./usuario.repository");
+const usuario_service_1 = require("./usuario.service");
 let UsuarioController = class UsuarioController {
-    constructor(usuarioRepository) {
+    constructor(usuarioRepository, usuarioService) {
         this.usuarioRepository = usuarioRepository;
+        this.usuarioService = usuarioService;
     }
     async criaUsuario(dadosDoUsuario) {
         const usuarioEntity = new usuario_entity_1.UsuarioEntity();
@@ -30,16 +32,15 @@ let UsuarioController = class UsuarioController {
         usuarioEntity.senha = dadosDoUsuario.senha;
         usuarioEntity.nome = dadosDoUsuario.nome;
         usuarioEntity.id = (0, uuid_1.v4)();
-        this.usuarioRepository.salvar(usuarioEntity);
+        this.usuarioService.criaUsuario(usuarioEntity);
         return {
             usuario: new ListaUsuario_dto_1.ListaUsuarioDTO(usuarioEntity.id, usuarioEntity.nome),
             messagem: 'usuário criado com sucesso',
         };
     }
     async listUsuarios() {
-        const usuariosSalvos = await this.usuarioRepository.listar();
-        const usuariosLista = usuariosSalvos.map((usuario) => new ListaUsuario_dto_1.ListaUsuarioDTO(usuario.id, usuario.nome));
-        return usuariosLista;
+        const usuariosSalvos = await this.usuarioService.listaUsuarios();
+        return usuariosSalvos;
     }
     async atualizaUsuario(id, novosDados) {
         const usuarioAtualizado = await this.usuarioRepository.atualiza(id, novosDados);
@@ -86,7 +87,8 @@ __decorate([
 ], UsuarioController.prototype, "removeUsuario", null);
 UsuarioController = __decorate([
     (0, common_1.Controller)('/usuarios'),
-    __metadata("design:paramtypes", [usuario_repository_1.UsuarioRepository])
+    __metadata("design:paramtypes", [usuario_repository_1.UsuarioRepository,
+        usuario_service_1.UsuarioService])
 ], UsuarioController);
 exports.UsuarioController = UsuarioController;
 //# sourceMappingURL=usuario.controller.js.map

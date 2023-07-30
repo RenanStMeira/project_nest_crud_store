@@ -1,4 +1,4 @@
-import { AtualizaProdutoDTO } from './dto/atualizaProduto.dto';
+import { AtualizaProdutoDTO } from '../produto/dto/AtualizaProduto.dto';
 import { CriaProdutoDTO } from './dto/CriaProduto.dto';
 import { ProdutoEntity } from './produto.entity';
 import { ProdutoRepository } from './produto.repository';

@@ -3,4 +3,7 @@ export declare class UsuarioEntity {
     nome: string;
     email: string;
     senha: string;
+    createdAt: string;
+    updatedAt: string;
+    deletedAt: string;
 }

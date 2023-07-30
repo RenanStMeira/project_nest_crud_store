@@ -22,6 +22,9 @@ let UsuarioService = class UsuarioService {
     constructor(usuarioRepository) {
         this.usuarioRepository = usuarioRepository;
     }
+    async criaUsuario(usuarioEntity) {
+        await this.usuarioRepository.save(usuarioEntity);
+    }
     async listaUsuarios() {
         const usuariosSalvos = await this.usuarioRepository.find();
         const usuariosLista = usuariosSalvos.map((usuario) => new ListaUsuario_dto_1.ListaUsuarioDTO(usuario.id, usuario.nome));
