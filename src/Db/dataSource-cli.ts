@@ -11,6 +11,8 @@ const dataSourceoptions: DataSourceOptions = {
         database: process.env.DB_NAME,
         entities: [__dirname + '/../**/*.entity.{js,ts}'],
         migrations: [__dirname + '/migrations/*.{js,ts}'],
+        synchronize: true,
+
       
 };
 
