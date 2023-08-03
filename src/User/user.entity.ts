@@ -1,3 +1,4 @@
+import { OrderEntity } from '../Order/order.entity';
 import {
   Entity,
   Column,
@@ -5,6 +6,7 @@ import {
   UpdateDateColumn,
   DeleteDateColumn,
   PrimaryGeneratedColumn,
+  OneToMany,
 } from 'typeorm';
 
 @Entity({ name: 'usuarios' })
@@ -29,4 +31,8 @@ export class UsuarioEntity {
 
   @DeleteDateColumn({ name: 'deleted_at' })
   deletedAt: string;
+
+  // Relacionamento de um para muitos (pedidos)
+  @OneToMany(() => OrderEntity, (order) => order.user)
+  oders: OrderEntity[];
 }

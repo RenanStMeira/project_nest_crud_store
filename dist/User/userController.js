@@ -58,7 +58,7 @@ let UsuarioController = class UsuarioController {
     }
 };
 __decorate([
-    (0, common_1.Post)(),
+    (0, common_1.Post)('/criar'),
     __param(0, (0, common_1.Body)()),
     __metadata("design:type", Function),
     __metadata("design:paramtypes", [createUsers_dto_1.CriaUsuarioDTO]),

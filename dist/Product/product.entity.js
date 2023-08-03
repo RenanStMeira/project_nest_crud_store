@@ -32,9 +32,9 @@ __decorate([
     __metadata("design:type", Number)
 ], ProdutoEntity.prototype, "valor", void 0);
 __decorate([
-    (0, typeorm_1.Column)({ name: 'quantidade', nullable: false }),
+    (0, typeorm_1.Column)({ name: 'quantidade_disponivel', nullable: false }),
     __metadata("design:type", Number)
-], ProdutoEntity.prototype, "quantidade", void 0);
+], ProdutoEntity.prototype, "quantidadeDisponivel", void 0);
 __decorate([
     (0, typeorm_1.Column)({ name: 'descricao', length: 255, nullable: false }),
     __metadata("design:type", String)

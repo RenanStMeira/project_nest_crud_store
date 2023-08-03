@@ -13,6 +13,7 @@ const typeorm_1 = require("@nestjs/typeorm");
 const productModule_1 = require("./Product/productModule");
 const userModule_1 = require("./User/userModule");
 const postgres_config_service_1 = require("./Config/postgres.config.service");
+const order_module_1 = require("./Order/order.module");
 let AppModule = class AppModule {
 };
 AppModule = __decorate([
@@ -27,6 +28,7 @@ AppModule = __decorate([
                 useClass: postgres_config_service_1.PostgresConfigService,
                 inject: [postgres_config_service_1.PostgresConfigService],
             }),
+            order_module_1.OrderModule,
         ],
     })
 ], AppModule);

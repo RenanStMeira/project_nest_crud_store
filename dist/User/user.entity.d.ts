@@ -1,3 +1,4 @@
+import { OrderEntity } from '../Order/order.entity';
 export declare class UsuarioEntity {
     id: string;
     nome: string;
@@ -6,4 +7,5 @@ export declare class UsuarioEntity {
     createdAt: string;
     updatedAt: string;
     deletedAt: string;
+    oders: OrderEntity[];
 }

@@ -22,7 +22,7 @@ export class UsuarioController {
     private usuarioService: UsuarioService
     ) {}
 
-  @Post()
+  @Post('/criar')
   async criaUsuario(@Body() dadosDoUsuario: CriaUsuarioDTO) {
     const usuarioEntity = new UsuarioEntity();
     usuarioEntity.email = dadosDoUsuario.email;

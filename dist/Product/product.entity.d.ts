@@ -5,7 +5,7 @@ export declare class ProdutoEntity {
     usuarioId: string;
     nome: string;
     valor: number;
-    quantidade: number;
+    quantidadeDisponivel: number;
     descricao: string;
     categoria: string;
     caracteristicas: ProdutoCaracteristicaEntity[];

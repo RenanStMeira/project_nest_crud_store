@@ -25,7 +25,6 @@ let PostgresConfigService = class PostgresConfigService {
             password: this.configService.get('DB_PASSWORD'),
             database: this.configService.get('DB_NAME'),
             entities: [__dirname + '/../**/*.entity.{js,ts}'],
-            synchronize: true,
         };
     }
 };

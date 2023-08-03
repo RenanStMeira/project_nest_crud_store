@@ -10,6 +10,7 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.UsuarioEntity = void 0;
+const order_entity_1 = require("../Order/order.entity");
 const typeorm_1 = require("typeorm");
 let UsuarioEntity = class UsuarioEntity {
 };
@@ -41,6 +42,10 @@ __decorate([
     (0, typeorm_1.DeleteDateColumn)({ name: 'deleted_at' }),
     __metadata("design:type", String)
 ], UsuarioEntity.prototype, "deletedAt", void 0);
+__decorate([
+    (0, typeorm_1.OneToMany)(() => order_entity_1.OrderEntity, (order) => order.user),
+    __metadata("design:type", Array)
+], UsuarioEntity.prototype, "oders", void 0);
 UsuarioEntity = __decorate([
     (0, typeorm_1.Entity)({ name: 'usuarios' })
 ], UsuarioEntity);
