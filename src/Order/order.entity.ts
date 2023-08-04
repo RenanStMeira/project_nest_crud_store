@@ -41,4 +41,5 @@ import { ItemOrderEntity } from './itemOrder.entity';
       cascade: true,
     })
       itemOrder: ItemOrderEntity[];
+    itensPedido: any;
   }
